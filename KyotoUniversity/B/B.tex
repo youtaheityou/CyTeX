@@ -1,0 +1,85 @@
+\documentclass{jarticle}
+\usepackage{comment}
+\usepackage[top=30truemm,bottom=15truemm,left=20truemm,right=20truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{subfigure}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+\usepackage{csvsimple}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+\allowdisplaybreaks
+\usepackage{here}
+\allowdisplaybreaks[1]
+%\renewcommand{\refname}{Reference}
+\usepackage{multirow}
+
+\begin{abstract}
+	冷凍サイクルの原理を理解するため、市販のガスヒートポンプエアコンを用いて、圧縮機、凝縮器、膨張弁、蒸発器のそれぞれ前後の冷媒の圧力及び温度を計測し、圧縮機の回転速度を変更したときの成績係数を求めた。
+	さらに、ガスエンジンを含めたシステムの総合効率を求めた。
+\end{abstract}
+
+\begin{document}
+\section{目的}
+	冷凍サイクルにおける冷媒の状態を測定し、熱と仕事の変換、サイクル、熱交換などに関する理解を深め、冷凍サイクルの原理を修得する。
+
+\section{原理}
+	ある物質から熱を奪って、温度の高い周囲物体に放出し、物質の温度を下げて冷却するプロセスを冷凍と呼び、冷凍を実現するための装置を冷凍装置という。
+	冷凍装置内において、冷やしたい物質から熱を取り去る媒体を冷媒と呼び、冷媒を使用する代表的な冷凍装置には蒸気圧縮冷凍装置や吸収冷凍装置などがあり、これらはいずれも冷媒の蒸発潜熱を利用する。
+	このうち、本実験では蒸気圧縮冷凍装置を用いた。
+	\par 蒸気圧縮冷凍装置の構成を図\ref{fig:flozen_device_components}に示す。
+	蒸発器内で飽和液が蒸発、蒸発器外側の低温部から熱$Q_1$を奪って冷却する。
+	そして、発生する飽和蒸気は圧縮機で断熱圧縮され、その結果温度が上昇して冷凍機の外部環境より高温の過熱蒸気となる。
+	従って、この蒸気は次の凝縮器において外部環境に熱を放出することができることとなり、同時に蒸気自身は冷却凝縮（等圧下）して飽和液となる。
+	この飽和液は次いで膨張弁（絞り弁）を通って圧力を低下、そのため液の飽和温度も低下して蒸発器に戻り、再び冷却の作用に入る。
+
+	\begin{figure}[H]
+		\centering
+		\hspace{-2cm}
+		\vspace{0cm}
+		\includegraphics[width=7cm,pagebox=cropbox]{flozen_device_components.png}
+		\caption{蒸気圧縮冷凍装置の構成}
+		\label{fig:flozen_device_components}
+	\end{figure}
+
+	\par 図\ref{fig:flozen_cycle_changing}は作動流体の状態変化を温度T-エントロピs線図及び圧力p-エンタルピh線図上に示したものであり、おおよそランキンサイクルを逆向きに回した形である。
+	ただし、冷凍機の場合凝縮器出口3での作動流体の温度が外部環境の温度以下には下げられないので、3 -> 4の温度変化は膨張弁による圧力変化によって行われており、等エンタルピ変化となる。
+	冷凍機の作動流体はほぼ大気温度前後で用いられるのが一般的であり、そうした温度範囲で凝縮並びに蒸発が容易に行える特性を持つ物質を冷媒として用いる。
+	本実験ではフレオン22を用いた。
+
+	\begin{figure}[H]
+		\centering
+		\hspace{-2cm}
+		\vspace{0cm}
+		\includegraphics[width=7cm,pagebox=cropbox]{flozen_cycle_changing.png}
+		\caption{冷凍サイクルにおける冷媒の状態変化}
+		\label{fig:flozen_cycle_changing}
+	\end{figure}
+
+	\par 冷凍サイクルの評価には成績係数(Coefficient of Performance, COP)あるいは動作係数と呼ばれるものを用いる。
+	冷凍のCOP $\epsilon_c$ は、圧縮動力Lと冷凍能力$Q_1$の比で定義され、$\epsilon_c = Q_1/L$である。
+	一方、冷凍サイクルにおいて高温熱源に対する加熱作用に着目すると、対象を温める目的にも利用でき、暖房などに利用される。
+	この際、冷凍熱源には大気、地下水、海水などの常温のものや、地熱やエンジンの排熱を用いる。
+	この目的に冷凍サイクルを使用する場合には、特にヒートポンプと呼び、利用できる加熱量$Q_2$は
+
+\section{実験方法}
+\section{使用器具}
+表\ref{tb:Experimental Equipment}に実験で使用した器具を示す。
+\begin{table}[H]
+	\centering
+	\caption{使用器具}
+	\label{tb:Experimental Equipment}
+	\begin{tabular}{c|c|c|c} \hline
+		名称 & 規格 & 製造会社 & その他\\ \hline
+	\end{tabular}
+\end{table}
+\section{Results}
+\section{Discussion}
+
+\begin{thebibliography}{99}
+\end{thebibliography}
+
+\end{document}
